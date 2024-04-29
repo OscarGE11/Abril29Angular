@@ -1,0 +1,21 @@
+
+<h1>Lista de productos</h1>
+<button routerLink="alta">Alta de un nuevo producto</button>
+@for (item of listaProductos; track $index) {
+
+    <p><b>ID PRODUCTO:</b> {{item.idProducto}}</p>
+    <p><b>NOMBRE PRODUCTO:</b> {{item.nombreProducto}}</p>
+    <p><b>PRECIO UNITARIO:</b> {{item.precioUnitario}}</p>
+    <p><b>UNIDADES STOCK:</b> {{item.unidadesStock}}</p>
+    <p><b>ID CATEGORIA:</b> {{item.idCategoria}}</p>
+    
+    <button type="button" [routerLink]="['edicion',item.idProducto]">Modificar</button>
+    <button (click)="borrarProducto(item.idProducto)">Borrar</button>
+
+
+    <p>------------------------------------------------</p>
+
+}
+
+<router-outlet></router-outlet>
+
